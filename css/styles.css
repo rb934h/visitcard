@@ -6,6 +6,97 @@
   --gap:20px;
 }
 
+
+/* Планшеты и ниже */
+@media (max-width: 768px) {
+
+  .container {
+    padding: 28px 16px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .carousel-track {
+    gap: 12px;
+    overflow-x: auto;
+    padding: 8px 0;
+  }
+
+  .card.work {
+    min-width: 260px;
+    max-width: 260px;
+    scroll-snap-align: center;
+  }
+
+  .carousel-btn {
+    display: none; /* свайп вместо кнопок */
+  }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+
+  .logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .role {
+    font-size: 12px;
+  }
+
+  .skills-list {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skills-list li {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .card.work {
+    min-width: 220px;
+    max-width: 220px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .section-sub {
+    text-align: center;
+  }
+}
+
 *{box-sizing:border-box}
 html,body{height:100%;}
 body{

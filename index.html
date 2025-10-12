@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Визитка — Андреев Валерий</title>
+  <meta name="description" content="Одностраничная визитка — портфолио, контакты, навыки." />
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero" aria-label="Перейти вверх">
+        <img src="assets/logo.png" alt="" class="logo">
+        <div>
+          <div class="name">Андреев Валерий</div>
+          <div class="role">C# / Unity</div>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section-title">Обо мне</h2>
+        <div class="about-grid">
+          <div class="about-card card">
+            <h3>Коротко</h3>
+            <p>Я занимаюсь разработкой на Unity более 5 лет. 
+            За это время успел поработать в команде Azur games, где помимо работы над проектами, реализовывал editor инструменты для технических артистов в Unity/Cocos.
+            Также в свободное время, реализовал небольшой пет проект, с которым можно ознакомиться ниже.</p>
+            <ul>
+              <li>Оптимизация производительности</li>
+              <li>Чистая архитектура и паттерны</li>
+            </ul>
+          </div>
+
+          <div class="skills-card card">
+            <h3>Навыки</h3>
+            <div class="skill-bars">
+              <div class="skill"><span>Unity</span><div class="bar"><div class="fill" style="--w:92%"></div></div></div>
+              <div class="skill"><span>C#</span><div class="bar"><div class="fill" style="--w:88%"></div></div></div>
+              <div class="skill"><span>TS / Web</span><div class="bar"><div class="fill" style="--w:50%"></div></div></div>
+            </div>
+          </div>
+
+          <ul class="skills-list" aria-hidden="false">
+            <li>Unity • C#</li>
+            <li>DOTween • Firebase • DI (VContainer, Zenject) • UniTask</li>
+            <li>Addressables • LINQ</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="works" class="section works">
+      <div class="container">
+        <h2 class="section-title">Работы</h2>
+        <p class="section-sub">Клик по карточке открывает demo / репозиторий.</p>
+
+        <div class="carousel" id="carousel" aria-roledescription="carousel">
+          <button class="carousel-btn prev" data-action="prev" aria-label="Предыдущий">‹</button>
+          <div class="carousel-track" id="track">
+            <article class="card work" tabindex="0">
+              <img src="assets/Carousel.gif" alt="Project 1">
+              <h3>Carousel</h3>
+              <p>Настраиваемый компонент для Unity, который позволяет интерактивно вращать 3D/2D объекты в сцене.</p>
+              <div class="meta"><span>Unity, C#, DOTween</span></div>
+              <div class="work-links"><a href="https://github.com/campervcs934/Carousel" class="btn small ghost">Repo</a></div>
+            </article>
+
+            <article class="card work" tabindex="0">
+              <img src="assets/Farm.gif" alt="Project 2">
+              <h3>Farm clicker</h3>
+              <p>Тайм менеджмент игра про ферму.</p>
+              <div class="meta"><span>Unity, C#, VContainer, UniTask, DOTween</span></div>
+              <div class="work-links"><a href="#" class="btn small">Demo</a> <a href="https://github.com/campervcs934/FarmClicker" class="btn small ghost">Repo</a></div>
+            </article>
+            
+
+          </div>
+          <button class="carousel-btn next" data-action="next" aria-label="Следующий">›</button>
+          <div class="dots" id="dots" aria-hidden="false"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title">Контакты</h2>
+        <div class="contact-grid">
+          <aside class="contact-info card">
+            <p class="muted"> email: regulusblack934@gmail.com</p>
+            <p> <a href="https://github.com/campervcs934" class="btn small">Github</a>  <a href="#" class="btn small">Telegram — @rb934h.</a> </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

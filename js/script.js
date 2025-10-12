@@ -1,9 +1,6 @@
 /* script.js - carousel, theme, form */
 document.addEventListener('DOMContentLoaded', function(){
 
-  // year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
   // simple entrance animations
   document.querySelectorAll('.section, .hero').forEach((el,i)=>{
     setTimeout(()=>el.classList.add('show'), 120 + i*80);
@@ -49,18 +46,6 @@ document.addEventListener('DOMContentLoaded', function(){
   function resetAutoplay(){ if(autoplay) startAutoplay(); }
   startAutoplay();
 
-  // contact form (fake)
-  const form = document.getElementById('contactForm');
-  const formMsg = document.getElementById('formMsg');
-  form.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const fd = new FormData(form);
-    formMsg.textContent = 'Отправка...';
-    setTimeout(()=>{
-      formMsg.textContent = 'Спасибо! Сообщение отправлено (заглушка).';
-      form.reset();
-    }, 900);
-  });
 
   // small accessibility: keyboard arrows to control carousel
   document.addEventListener('keydown', (e)=>{

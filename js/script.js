@@ -1,13 +1,10 @@
-/* script.js - carousel, theme, form */
 document.addEventListener('DOMContentLoaded', function () {
-
-    // simple entrance animations
+    
     document.querySelectorAll('.section, .hero').forEach((el, i) => {
         setTimeout(() => el.classList.add('show'), 120 + i * 80);
     });
 });
 
-// CAROUSEL
 const track = document.getElementById('track');
 const slides = Array.from(track.children);
 const prevBtn = document.querySelector('[data-action="prev"]');
@@ -18,7 +15,6 @@ let autoplay = true;
 let autoplayTimer = null;
 const slideWidth = slides[0].getBoundingClientRect().width + 16; // gap
 
-// place slides inline (CSS already handles), create dots
 slides.forEach((s, i) => {
     const dot = document.createElement('button');
     dot.className = 'dot';
@@ -54,11 +50,26 @@ dots.forEach(d => d.addEventListener('click', e => {
 
 function startAutoplay() {
     if (autoplayTimer) clearInterval(autoplayTimer);
+
     autoplayTimer = setInterval(() => {
-        index = (index + 1) % slides.length;
+        if (index < 1) {
+            index++; 
+        } else {
+            index = 0;
+            resetCarouselPosition();
+        }
         update();
     }, 4000);
 }
+
+function resetCarouselPosition() {
+    carousel.style.transition = "none";
+    carousel.style.transform = "translateX(0)";
+    setTimeout(() => {
+        carousel.style.transition = "transform 0.5s ease";
+    }, 50);
+}
+
 
 function resetAutoplay() {
     if (autoplay) startAutoplay();
@@ -67,7 +78,6 @@ function resetAutoplay() {
 startAutoplay();
 
 
-// small accessibility: keyboard arrows to control carousel
 document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') {
         index = (index + 1) % slides.length;
@@ -81,7 +91,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-//Dictionary
 
 let translations = {};
 let currentLang = "ru";
